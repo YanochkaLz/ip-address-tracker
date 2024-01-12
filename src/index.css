@@ -4,6 +4,7 @@ html {
   font-size: 18px;
   --dark-grey: hsl(0, 0%, 59%);
   --very-dark-grey: hsl(0, 0%, 17%);
+  --red: rgb(212, 64, 41);
 }
 
 body {

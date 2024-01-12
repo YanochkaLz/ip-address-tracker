@@ -5,12 +5,17 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 100%;
+
+  .customInput_block {
+    width: min(100%, 500px);
+  }
 
   .customInput {
     background-color: white;
     border-radius: .8rem 0rem 0rem .8rem;
     padding: .6rem 1rem;
-    width: min(100%, 500px);
+    width: 100%;
 
     &::after {
       display: none;
@@ -34,4 +39,9 @@
       background-color: var(--very-dark-grey);
     }
   }
+}
+
+.errorBlock {
+  position: absolute;
+  bottom: -50%;
 }

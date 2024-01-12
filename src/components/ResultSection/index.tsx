@@ -3,6 +3,8 @@ import { FC, useEffect, useState } from 'react';
 import './styles.scss';
 import ResultItem from './ResultItem';
 import { ipAddressAPI } from '../../services/IpAddressService';
+import { useSelector } from 'react-redux';
+import { useAppSelector } from '../../hooks/redux';
 
 interface IResult {
 	ipAddress: string;
@@ -14,7 +16,8 @@ interface IResult {
 const apiKey = process.env.REACT_APP_API_KEY || '';
 
 const ResultSection: FC = () => {
-	const [ipAddress, setApiAddress] = useState('192.212.174.101');
+	const ipAddress = useAppSelector(state => state.inputReducer.inputText)
+
 	const [result, setResult] = useState<IResult>({
 		ipAddress: '',
 		location: '',
@@ -26,7 +29,7 @@ const ResultSection: FC = () => {
 		apiKey,
 		ipAddress,
 	});
-
+	
 	useEffect(() => {
 		if (data) {
 			setResult({
