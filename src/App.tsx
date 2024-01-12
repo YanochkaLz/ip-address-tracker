@@ -1,19 +1,18 @@
 import React from 'react';
-import { ipAddressAPI } from './services/IpAddressService';
-import Attribution from './components/Attribution';
-const apiKey = process.env.REACT_APP_API_KEY || '';
-const ipAddress = '8.8.8.8'
+import { Stack } from '@mui/material';
+import SearchSection from './components/SearchSection';
+import MapSection from './components/MapSection';
 
 function App() {
-  const { data, error, isLoading } = ipAddressAPI.useGetIpDataQuery({ apiKey, ipAddress })
-
-  console.log(data, error)
-
-  return (
-    <>
-      <Attribution />
-    </>
-  );
+	return (
+		<>
+			<Stack className='display'>
+				<SearchSection />
+				<MapSection />
+			</Stack>
+			{/* <Attribution /> */}
+		</>
+	);
 }
 
 export default App;

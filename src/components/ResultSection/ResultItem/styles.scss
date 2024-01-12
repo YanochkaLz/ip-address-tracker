@@ -1,0 +1,24 @@
+.result-list_item {
+  display: flex;
+  flex-direction: column;
+  width: fit-content !important;
+  align-items: start !important;
+  gap: 1rem;
+  flex: 1;
+  padding: 2rem !important;
+
+  &-P {
+    font-size: .8rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    margin: 0;
+    color: var(--dark-grey);
+  }
+
+  &-V {
+    font-size: 1.6rem;
+    font-weight: 500;
+    margin: 0;
+    color: var(--very-dark-grey);
+  }
+}

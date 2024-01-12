@@ -1,0 +1,37 @@
+.inputBlock {
+  position: relative;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .customInput {
+    background-color: white;
+    border-radius: .8rem 0rem 0rem .8rem;
+    padding: .6rem 1rem;
+    width: min(100%, 500px);
+
+    &::after {
+      display: none;
+    }
+
+    &::before {
+      display: none;
+    }
+
+    input {
+      font-weight: 500;
+    }
+  }
+
+  .submitBtn {
+    background-color: black;
+    border-radius: 0rem .8rem .8rem 0rem;
+    height: 100%;
+
+    &:hover {
+      background-color: var(--very-dark-grey);
+    }
+  }
+}
