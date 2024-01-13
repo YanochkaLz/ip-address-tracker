@@ -1,13 +1,13 @@
 import { Box, Button, Input } from '@mui/material';
-import React, { FC, useState } from 'react';
+import { FC } from 'react';
 import { useFormik } from 'formik';
 import validationSchema from './validation';
-import arrowImg from '../../assets/icon-arrow.svg';
 import ErrorText from './validation/ErrorText';
-
-import './styles.scss';
 import { useAppDispatch, useAppSelector } from '../../hooks/redux';
 import { inputSlice } from '../../store/reducers/InputSlice';
+import arrowImg from '../../assets/icon-arrow.svg';
+
+import './styles.scss';
 
 const InputBlock: FC = () => {
 	const ipAddress = useAppSelector(state => state.inputReducer.inputText);

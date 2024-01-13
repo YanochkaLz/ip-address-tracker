@@ -1,6 +1,6 @@
-import React from 'react';
+import { FC } from "react";
 
-const Attribution = () => {
+const Attribution:FC = () => {
 	return (
 		<div className='attribution'>
 			Challenge by{' '}

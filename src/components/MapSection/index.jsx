@@ -1,6 +1,6 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Box } from '@mui/material';
-import { MapContainer, TileLayer, Marker, useMapEvents } from 'react-leaflet';
+import { MapContainer, TileLayer, Marker } from 'react-leaflet';
 import { Icon } from 'leaflet';
 import markerIcon from '../../assets/icon-location.svg';
 
@@ -26,7 +26,7 @@ const MapSection = () => {
 	});
 
 	const [mapKey, setMapKey] = useState(0); 
-
+	
 	useEffect(() => {
 		if (data?.location?.lat) {
 			const newCoords = {

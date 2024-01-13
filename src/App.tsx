@@ -1,4 +1,3 @@
-import React from 'react';
 import { Stack } from '@mui/material';
 import SearchSection from './components/SearchSection';
 import MapSection from './components/MapSection';

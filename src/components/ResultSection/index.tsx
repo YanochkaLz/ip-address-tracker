@@ -1,10 +1,10 @@
 import { Divider, List } from '@mui/material';
 import { FC, useEffect, useState } from 'react';
-import './styles.scss';
 import ResultItem from './ResultItem';
 import { ipAddressAPI } from '../../services/IpAddressService';
-import { useSelector } from 'react-redux';
 import { useAppSelector } from '../../hooks/redux';
+
+import './styles.scss';
 
 interface IResult {
 	ipAddress: string;
