@@ -16,7 +16,7 @@ interface IResult {
 const apiKey = process.env.REACT_APP_API_KEY || '';
 
 const ResultSection: FC = () => {
-	const ipAddress = useAppSelector(state => state.inputReducer.inputText)
+	const ipAddress = useAppSelector(state => state.inputReducer.inputText);
 
 	const [result, setResult] = useState<IResult>({
 		ipAddress: '',
@@ -29,12 +29,17 @@ const ResultSection: FC = () => {
 		apiKey,
 		ipAddress,
 	});
-	
+
 	useEffect(() => {
 		if (data) {
 			setResult({
 				ipAddress: data.ip,
-				location: data.location.country + ', ' + data.location.region,
+				location:
+					data.location.country +
+					', ' +
+					data.location.region +
+					', ' +
+					data.location.city,
 				timezone: data.location.timezone,
 				isp: data.isp,
 			});

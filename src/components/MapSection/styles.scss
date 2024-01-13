@@ -1,3 +1,9 @@
 .mapSection {
-  height: 70%;
+  height: 70vh;
+
+  .map {
+    z-index: 2;
+    height: 100%;
+    width: 100%;
+  }
 }
