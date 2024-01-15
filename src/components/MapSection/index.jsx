@@ -47,7 +47,7 @@ const MapSection = () => {
 					className='map'
 					center={cords}
 					zoom={13}
-					scrollWheelZoom={true}
+					scrollWheelZoom={false}
 				>
 					<TileLayer url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png' />
 					<Marker position={cords} icon={customIcon} />

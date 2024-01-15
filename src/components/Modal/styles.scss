@@ -2,14 +2,15 @@
   display: flex;
   justify-content: center;
   background-color: hwb(0 100% 0% / 0.7);
+  overflow: scroll;
 
   .error {
-    margin-top: 15vh;
+    margin-block: 10vh;
     height: fit-content;
     background-color: rgb(181, 231, 237);
     padding: 2rem;
     border-radius: 20px;
     text-align: center;
-    width: 50%;
+    width: min(80vw, 600px);
   }
 }

@@ -10,6 +10,7 @@ html {
 
 body {
   margin: 0;
+  padding: 0 !important;
   font-family: 'Rubik', sans-serif;
   font-weight: 400;
   color: white;
@@ -19,6 +20,20 @@ body {
 
 
 .display {
-  height: 100vh;
   background-color: rgb(155, 195, 255);
+}
+
+
+.leaflet-left {
+  left: 0;
+}
+
+.leaflet-top {
+  top: 50%;
+}
+
+@media (max-width: 1000px) {
+  html {
+    font-size: 16px;
+  }
 }

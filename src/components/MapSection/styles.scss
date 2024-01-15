@@ -1,9 +1,16 @@
 .mapSection {
   height: 70vh;
+  min-height: 700px;
 
   .map {
     z-index: 2;
     height: 100%;
     width: 100%;
+  }
+
+  @media (max-width: 500px) {
+    & {
+      min-height: 2000px;
+    }
   }
 }
