@@ -9,7 +9,6 @@ interface IResultItem {
 }
 
 const ResultItem: FC<IResultItem> = ({ property, value }) => {
-	console.log(3)
 	return (
 		<ListItem className='result-list_item'>
 			<h3 className='result-list_item-P'>{property}</h3>

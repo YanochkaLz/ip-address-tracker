@@ -4,15 +4,25 @@
   display: flex;
   align-items: start;
   flex-wrap: wrap;
-  padding: 0 !important;
   width: min(1300px, 100%);
   max-width: 360;
   border-radius: 1rem;
   border: '1px solid black';
   background-color: #ffffff;
   z-index: 5;
+
   hr {
     height: 60%;
     align-self: center;
+  }
+
+  &.results-error {
+    padding: 1.5rem;
+    text-align: center;
+    line-height: 130%;
+    font-size: 1.5rem;
+    width: min(800px, 100%);
+    font-weight: 500;
+    color: var(--accent-color);
   }
 }

@@ -1,11 +1,12 @@
 .searchSection {
-  background-color: rgba(61, 26, 190, 0.805);
+  background-color: var(--accent-color);
   height: 30%;
   background-image: url(../../assets/pattern-bg-desktop.png);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   padding: 20px;
+
   &_title {
     margin: 0;
     font-size: 2rem;

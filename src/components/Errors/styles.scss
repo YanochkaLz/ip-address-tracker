@@ -1,0 +1,29 @@
+.error {
+  &-img {
+    height: 100px;
+  }
+
+  &-text {
+    font-size: 1.2rem;
+    font-weight: 400;
+    line-height: 150%;
+    color: rgb(33, 76, 46);
+    text-align: center;
+    text-shadow: 1px 0px 1px black;
+  }
+
+  &-video {
+    height: 200px;
+    width: 100%;
+  }
+
+  &-video_wrapper {
+    width: fit-content;
+    height: 108px;
+    margin: 0 auto;
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+  }
+}

@@ -10,23 +10,23 @@ import { ipAddressAPI } from '../../services/IpAddressService';
 
 const apiKey = process.env.REACT_APP_API_KEY || '';
 
-const customIcon = new Icon({		
+const customIcon = new Icon({
 	iconUrl: markerIcon,
-	iconSize: [30, 41], 
+	iconSize: [30, 41],
 	iconAnchor: [12, 41],
-	popupAnchor: [1, -34]
+	popupAnchor: [1, -34],
 });
 
 const MapSection = () => {
 	const [cords, setCords] = useState({ lat: 0, lng: 0 });
 	const ipAddress = useAppSelector(state => state.inputReducer.inputText);
-	const { data } = ipAddressAPI.useGetIpDataQuery({
+	const { data, error } = ipAddressAPI.useGetIpDataQuery({
 		apiKey,
 		ipAddress,
 	});
 
-	const [mapKey, setMapKey] = useState(0); 
-	
+	const [mapKey, setMapKey] = useState(0);
+
 	useEffect(() => {
 		if (data?.location?.lat) {
 			const newCoords = {
@@ -38,18 +38,21 @@ const MapSection = () => {
 		}
 	}, [data]);
 
+	console.log(error);
 	return (
 		<Box className='mapSection'>
-			<MapContainer
-				key={mapKey}
-				className='map'
-				center={cords}
-				zoom={13}
-				scrollWheelZoom={true}
-			>
-				<TileLayer url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png' />
-				<Marker position={cords} icon={customIcon} />
-			</MapContainer>
+			{!error && (
+				<MapContainer
+					key={mapKey}
+					className='map'
+					center={cords}
+					zoom={13}
+					scrollWheelZoom={true}
+				>
+					<TileLayer url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png' />
+					<Marker position={cords} icon={customIcon} />
+				</MapContainer>
+			)}
 		</Box>
 	);
 };

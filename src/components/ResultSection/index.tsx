@@ -5,6 +5,8 @@ import { ipAddressAPI } from '../../services/IpAddressService';
 import { useAppSelector } from '../../hooks/redux';
 
 import './styles.scss';
+import Loading from '../Loading';
+import ErrorComponentModal from '../Errors';
 
 interface IResult {
 	ipAddress: string;
@@ -45,6 +47,30 @@ const ResultSection: FC = () => {
 			});
 		}
 	}, [data]);
+
+	if (error && 'status' in error) {
+		if (
+			error.status === 422 &&
+			'data' in error &&
+			'messages' in (error.data as any) &&
+			(error.data as any).messages === 'Input correct IPv4 or IPv6 address.'
+		) {
+			return (
+				<div className='results-list results-error'>
+					The entered IP address does not exist! 
+					<br />
+					Please check the provided IP
+					address and ensure it is valid!
+				</div>
+			);
+		} else {
+			return <ErrorComponentModal error={error}/>;
+		}
+	}
+
+	if (isLoading) {
+		return <Loading />;
+	}
 
 	return (
 		<List className='results-list'>

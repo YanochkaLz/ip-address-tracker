@@ -5,6 +5,7 @@ html {
   --dark-grey: hsl(0, 0%, 59%);
   --very-dark-grey: hsl(0, 0%, 17%);
   --red: rgb(212, 64, 41);
+  --accent-color: rgba(61, 26, 190, 0.805);
 }
 
 body {

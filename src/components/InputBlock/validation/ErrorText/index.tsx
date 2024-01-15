@@ -8,7 +8,7 @@ interface IError {
 }
 
 const ErrorText: FC<IError> = ({children}) => {
-	return <Box className='error-text'>{children}</Box>;
+	return <Box className='error-input'>{children}</Box>;
 };
 
 export default ErrorText;
